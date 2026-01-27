@@ -1,42 +1,112 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* BACKGROUND WITH STARS */
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(2px 2px at 20% 30%, white, transparent),
+    radial-gradient(2px 2px at 80% 40%, white, transparent),
+    radial-gradient(1.5px 1.5px at 60% 70%, white, transparent),
+    radial-gradient(1.5px 1.5px at 30% 80%, white, transparent),
+    linear-gradient(120deg, #020024, #090979, #000000);
+  background-size: cover;
+  color: white;
+}
+
+/* CENTER WHOLE APP */
+.space-app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/* TITLE */
+.header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 25px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.header h1 {
+  font-size: 38px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.astronaut {
+  font-size: 45px;
+  animation: float 3s ease-in-out infinite;
 }
 
-.card {
-  padding: 2em;
+/* FLOATING ANIMATION */
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0); }
 }
 
-.read-the-docs {
-  color: #888;
+/* NAVBAR */
+.nav {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 35px;
 }
+
+.nav a {
+  color: #00e5ff;
+  font-size: 18px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.nav a:hover {
+  text-decoration: underline;
+}
+
+/* CARD */
+.page-card {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 40px 50px;
+  border-radius: 16px;
+  min-width: 320px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+  box-shadow: 0 0 40px rgba(0, 229, 255, 0.2);
+}
+
+/* BUTTON */
+.space-btn {
+  padding: 12px 28px;
+  border-radius: 25px;
+  border: none;
+  background: #00e5ff;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.space-btn:hover {
+  background: #00bcd4;
+}
+
+/* INPUTS */
+input,
+select {
+  width: 260px;
+  padding: 12px;
+  border-radius: 10px;
+  font-size: 15px;
+  border: none;
+}
+ 

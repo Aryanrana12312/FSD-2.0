@@ -1,20 +1,33 @@
-import ButtonBasic from './components/Button.jsx';
-import TextFieldBasic from './components/TextField.jsx';
-import SelectBasic from './components/Select.jsx';
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import Home from "./components/Home";
+import TextFieldPage from "./components/TextField";
+import SelectPage from "./components/Select";
+import "./App.css";
 
 function App() {
   return (
-    <div style={{ padding: '20px' }}>
-      <h2>Experiment 2</h2>
+    <BrowserRouter>
+      <div className="space-app">
 
-      <ButtonBasic />
-      <br /><br />
+        <div className="header">
+          <span className="astronaut">🚀</span>
+          <h1>Implement Routing in SPA</h1>
+        </div>
 
-      <TextFieldBasic />
-      <br /><br />
+        <nav className="nav">
+          <Link to="/">Home</Link>
+          <Link to="/textfield">TextField</Link>
+          <Link to="/select">Select</Link>
+        </nav>
 
-      <SelectBasic />
-    </div>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/textfield" element={<TextFieldPage />} />
+          <Route path="/select" element={<SelectPage />} />
+        </Routes>
+
+      </div>
+    </BrowserRouter>
   );
 }
 
