@@ -184,6 +184,4 @@ https://your-order-service.onrender.com
 
 ---
 
-## 👨‍💻 Author
-
-Shubham Rana
+## Aryan Rana
